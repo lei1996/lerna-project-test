@@ -1,3 +1,6 @@
 [submodule "darius"]
 	path = darius
 	url = https://github.com/lei1996/darius.git
+[submodule "lerna-submodule-1"]
+	path = lerna-submodule-1
+	url = https://github.com/lei1996/lerna-submodule-1.git
