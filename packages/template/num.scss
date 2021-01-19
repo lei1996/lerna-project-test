@@ -1,0 +1,42 @@
+.NumCountContainer {
+  display: flex;
+
+  // max-width: 126px;
+  height: 30px;
+  border-radius: 2px;
+  border: solid 1px #e6e6e6;
+
+  .fontBox {
+    width: 36px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    .font10 {
+      color: #999999;
+    }
+    .font10.disable {
+      color: #dfdfdf;
+    }
+  }
+
+  .numCountIptBox {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .numCountIpt {
+      height: 100%;
+      width: 100%;
+      outline: none;
+      border: none;
+      text-align: center;
+      border-right: solid 1px #e6e6e6;
+      border-left: solid 1px #e6e6e6;
+    }
+  }
+}
