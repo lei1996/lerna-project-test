@@ -1,3 +1,6 @@
 [submodule "lerna-submodule-1"]
 	path = lerna-submodule-1
 	url = https://github.com/lei1996/lerna-submodule-1.git
+[submodule "client/mobx-test"]
+	path = client/mobx-test
+	url = https://github.com/lei1996/mobx-test.git
