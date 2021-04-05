@@ -1,4 +1,4 @@
-const bigDecimal = require('js-big-decimal');
+// const bigDecimal = require("js-big-decimal");
 
 // 斜率变化
 // 1分钟 > 5分钟 > 10分钟
@@ -35,30 +35,56 @@ const bigDecimal = require('js-big-decimal');
 // slope([]);
 
 // 浮点数保留 x 位小数
-console.log(bigDecimal.round("12345.6789", 2)); // 12345.68
-// 浮点数相加/相减/相乘/相除
-console.log(bigDecimal.add("71.680", "71.520")); // 143.200
-console.log(bigDecimal.subtract("71.680", "71.520")); // 0.160
-console.log(bigDecimal.multiply("71.680", "71.520")); // 5126.5536
-console.log(bigDecimal.divide("45", "4", 2)); // 11.25
+// console.log(bigDecimal.round("12345.6789", 2)); // 12345.68
+// // 浮点数相加/相减/相乘/相除
+// console.log(bigDecimal.add("71.680", "71.520")); // 143.200
+// console.log(bigDecimal.subtract("71.680", "71.520")); // 0.160
+// console.log(bigDecimal.multiply("71.680", "71.520")); // 5126.5536
+// console.log(bigDecimal.divide("45", "4", 2)); // 11.25
 
-// 斜率写成 utils 
-function slope({ 
-  section = [71.520, 71.680], // 区间 前某分钟的值 -> 目标分钟的值
+// 斜率写成 utils
+function slope({
+  section = [71.52, 71.68], // 区间 前某分钟的值 -> 目标分钟的值
   x = 60, // 时间差值
 }) {
   const [left, right] = section;
   const diff = right - left;
 
-  return ;
+  return;
 }
 
-// 计算量能
+
+const grade = [1.5, 2.0, 3.0, 5.0, 10.0];
+function calorimeter() {
+  const arrs = [111, 103, 75, 67, 222, 110, 106, 143, 117, 224, 226, 159];
+  let cnt = 0;
+
+  for (let i = 0; i < arrs.length; i++) {
+    cnt += arrs[i];
+    
+  }
+
+  console.log(cnt / arrs.length);
+}
+
+calorimeter();
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 function MaxMinLimit({
   initalValue = 0,
-  minNum = 0,
+  minNum = -5,
   maxNum = 5,
   disable = false,
 }) {
@@ -70,6 +96,7 @@ function MaxMinLimit({
   };
 }
 
+// 增加一个点数
 MaxMinLimit.prototype.increment = function () {
   const { count, maxNum, disable } = this.datas;
 
@@ -80,6 +107,7 @@ MaxMinLimit.prototype.increment = function () {
   }
 };
 
+// 减少一个点数
 MaxMinLimit.prototype.decrement = function () {
   const { count, minNum, disable } = this.datas;
 
@@ -88,4 +116,14 @@ MaxMinLimit.prototype.decrement = function () {
   if (count > minNum) {
     this.datas.count = count - 1;
   }
+};
+
+// 临时 锁定/解锁
+MaxMinLimit.prototype.setDisable = function ({ bool = false }) {
+  this.datas.disable = bool;
+};
+
+// 检查是否锁定
+MaxMinLimit.prototype.isDisable = function () {
+  return this.datas.disable;
 };
