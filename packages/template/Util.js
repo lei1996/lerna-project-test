@@ -61,7 +61,13 @@ function calorimeter() {
 
   for (let i = 0; i < arrs.length; i++) {
     cnt += arrs[i];
-    
+  }
+
+  let avg = cnt / arrs.length;
+
+  // 偏差值  当前值 - 平均值
+  for (let i = 0; i < arrs.length; i++) {
+    console.log(arrs[i] - avg, 'diff');
   }
 
   console.log(cnt / arrs.length);
